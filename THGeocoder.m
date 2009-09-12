@@ -13,6 +13,20 @@
 @synthesize latitude;
 @synthesize longitude;
 
+- (void)dealloc
+{
+	[appid release], appid = nil;
+	[street release], street = nil;
+	[city release], city = nil;
+	[state release], state = nil;
+	[zip release], zip = nil;
+	[location release], location = nil;
+	[latitude release], latitude = nil;
+	[longitude release], longitude = nil;
+	
+	[super dealloc];
+}
+
 - (BOOL)geocode
 {
 	NSMutableString *strURL = [NSMutableString stringWithString:@"http://local.yahooapis.com/MapsService/V1/geocode?"];
